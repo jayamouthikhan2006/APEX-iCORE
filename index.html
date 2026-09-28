@@ -290,7 +290,7 @@ loader.parse(u8.buffer,'',g=>{
       else { m.roughnessMap=roughTex; if(/galvanised cladding/i.test(m.name)){ m.normalMap=ribTex; m.normalScale=new THREE.Vector2(0.6,0.6); m.color.multiplyScalar(0.92); } m.envMapIntensity=m.metalness>0.5?1.3:0.8; if(m.metalness>0.5) m.roughness=Math.max(0.28,m.roughness); }
       m.needsUpdate=true; } });
   const box=new THREE.Box3().setFromObject(root), c=box.getCenter(new THREE.Vector3()), s=box.getSize(new THREE.Vector3());
-  const d=Math.max(s.x,s.z); home={t:new THREE.Vector3(10.5,1.4,-2.6),p:new THREE.Vector3(24.5,9.5,11.5)};
+  const d=Math.max(s.x,s.z); home={t:new THREE.Vector3(8.0,1.4,-2.2),p:new THREE.Vector3(-10.6,5.9,8.0)};
   ctl.minDistance=1; ctl.maxDistance=d*2; reset(); msg.remove();
 },e=>{msg.textContent='The 3D model could not load here (it needs WebGL and an internet connection for the 3D engine).';});
 function setOpen(open){ if(front) front.visible=!open; fill.visible=open; if(open){ cam.position.set(12.5,1.55,6.2); ctl.target.set(12.5,1.3,0); ctl.update(); } else reset(); document.getElementById('m3dOpen').setAttribute('aria-pressed',open); document.getElementById('m3dClosed').setAttribute('aria-pressed',!open); }
